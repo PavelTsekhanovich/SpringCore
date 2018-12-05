@@ -5,16 +5,16 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class MyBeanPostProcessor implements BeanPostProcessor {
 
-	@Override
-	public Object postProcessAfterInitialization(Object object, String name) throws BeansException {
+    @Override
+    public Object postProcessAfterInitialization(Object object, String name) throws BeansException {
+        System.out.println(object + " - postProcessAfterInitialization()");
+        return object;
+    }
 
-		return object;
-	}
-
-	@Override
-	public Object postProcessBeforeInitialization(Object object, String name) throws BeansException {
-		System.out.println(object + " - postProcessBeforeInitialization()");
-		return object;
-	}
+    @Override
+    public Object postProcessBeforeInitialization(Object object, String name) throws BeansException {
+        System.out.println(object + " - postProcessBeforeInitialization()");
+        return object;
+    }
 
 }
